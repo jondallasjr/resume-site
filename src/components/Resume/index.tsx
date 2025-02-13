@@ -16,14 +16,16 @@ const Resume = () => {
   
   return (
     <ThemeTransition>
-      <div className={`max-w-4xl mx-auto p-8 bg-${colors.background} transition-colors duration-300`}>
-        <ThemeToggle />
-        <Header />
-        <Summary />
-        <Skills />
-        <Experience />
-        <Education />
-        <Testimonial />
+      <div className="min-h-screen bg-gray-50">
+        <div className="max-w-4xl mx-auto p-8">
+          <ThemeToggle />
+          <Header />
+          <Summary />
+          <Skills />
+          <Experience />
+          <Education />
+          <Testimonial />
+        </div>
       </div>
     </ThemeTransition>
   );

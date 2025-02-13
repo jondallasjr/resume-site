@@ -1,5 +1,5 @@
 import React from 'react';
-import Role, { RoleProps } from './Role';
+import Role, { RoleProps, Implementation } from './Role';
 import { useTheme } from '../context/ThemeContext';
 
 const Experience = () => {
@@ -9,11 +9,13 @@ const Experience = () => {
         {
             title: "Independent AI Consultant & Developer",
             company: "Jon Dallas AI, LLC",
+            companyUrl: "https://www.jondallasai.com",
             period: "2024-Present",
             description: "Independent consultancy delivering custom AI solutions and workshops for SMBs across various sectors",
             implementations: [
                 {
-                    company: "Propertybook.co.zw",
+                    company: "Propertybook",
+                    companyUrl: "https://www.propertybook.co.zw",
                     details: [
                         "Engineered agentic AI system to automate the generation of EEAT/SEO-optimized content",
                         "Integrated property database analysis (7,000+ listings), sentiment analysis, and location-specific research",
@@ -22,6 +24,7 @@ const Experience = () => {
                 },
                 {
                     company: "Pam Golding Properties",
+                    companyUrl: "https://www.pamgoldingzimbabwe.co.zw",
                     details: [
                         "Developed a custom, AI-powered Chrome extension for automatic property listing generation",
                         "Integrated image analysis (Vision) to determine property condition, style, materials, features, and more",
@@ -32,6 +35,7 @@ const Experience = () => {
                 },
                 {
                     company: "Resume Worded",
+                    companyUrl: "https://www.pamgoldingzimbabwe.co.zw",
                     details: [
                         "Designed 58-table agentic AI system for automated resume optimization",
                         "Automated resume parsing, LinkedIn & job scraping, ATS keyword analysis, generation, QA, and export to Google Docs",
@@ -45,6 +49,7 @@ const Experience = () => {
         {
             title: "Founder & Lead Facilitator",
             company: "Real Talk Philosophy",
+            companyUrl: "https://www.realtalkphilosophy.org",
             period: "2017-Present",
             description: "",
             achievements: [
@@ -55,8 +60,9 @@ const Experience = () => {
             ]
         },
         {
-            title: "Workshop & Events Manager",  // or "Digital Events Manager"?
+            title: "Workshop & Events Manager",
             company: "Global Ecovillage Network",
+            companyUrl: "https://www.ecovillage.org",
             period: "2021-2022",
             description: "",
             achievements: [

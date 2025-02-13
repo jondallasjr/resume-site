@@ -1,3 +1,4 @@
+/* eslint-disable */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -68,5 +69,34 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@media print {
+  /* Set background color for entire page */
+  @page {
+    margin: 0;
+    size: auto;
+    background-color: #fafafa;
+  }
+
+  body {
+    background-color: #fafafa !important;
+    min-height: 100vh;
+    padding: 2rem;
+  }
+
+  /* Add margin to the top of pages after a page break */
+  .page-break-before {
+    page-break-before: always;
+    margin-top: 3rem !important;
+    padding-top: 1rem !important;
+  }
+
+  /* Ensure background color extends to bottom */
+  #__next, 
+  main {
+    background-color: #fafafa !important;
+    min-height: 100vh;
   }
 }

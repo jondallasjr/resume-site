@@ -5,21 +5,52 @@ interface OtherExperienceItem {
   title: string;
   subtitle?: string;
   description?: string;
+  url?: string;
+}
+
+interface EducationItem {
+  degree: string;
+  school: string;
+  url?: string;
+  major: string;
 }
 
 const Education = () => {
   const { colors } = useTheme();
   
+  const education: EducationItem = {
+    degree: "Bachelor of Science",
+    school: "Towson University",
+    major: "Theatre & Philosophy"
+  };
+  
   const otherExperience: OtherExperienceItem[] = [
     {
       title: "TEDx Speaker",
-      description: '"Why We Play Games" | TEDx Ba Dinh, Hanoi'
+      description: '"Why We Play Games" | TEDx Ba Dinh, Hanoi',
+      url: "https://www.youtube.com/watch?v=nFapT0I8ujs"
     },
     {
       title: "Coda.io Expert",
-      description: "20+ enterprise systems developed. 15K+ monthly API invocations across 5 custom packs."
+      description: "20+ enterprise systems developed. 15K+ monthly API invocations across 5 custom packs.",
+      url: "https://coda.io/@jon-dallas"
     }
   ];
+
+  const renderLink = (title: string, url?: string) => {
+    if (!url) return title;
+    
+    return (
+      <a 
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hover:text-blue-600"
+      >
+        {title}
+      </a>
+    );
+  };
 
   return (
     <div className="mb-8">
@@ -30,10 +61,12 @@ const Education = () => {
           </h3>
           <div className="text-gray-600">
             <div className={`font-medium ${colors.accent}`}>
-              Bachelor of Science
+              {education.degree}
             </div>
-            <div>Towson University</div>
-            <div className="text-sm mt-2">Theatre & Philosophy</div>
+            <div>
+              {renderLink(education.school, education.url)}
+            </div>
+            <div className="text-sm mt-2">{education.major}</div>
           </div>
         </div>
         
@@ -45,7 +78,7 @@ const Education = () => {
             {otherExperience.map((exp, idx) => (
               <li key={idx}>
                 <div className={`font-medium ${colors.accent}`}>
-                  {exp.title}
+                  {renderLink(exp.title, exp.url)}
                 </div>
                 {exp.subtitle && <div>{exp.subtitle}</div>}
                 {exp.description && <div className="text-sm">{exp.description}</div>}
