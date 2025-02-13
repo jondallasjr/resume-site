@@ -15,7 +15,7 @@ const Header = () => {
 
     const bottomLineInfo = [
         { Icon: Globe, text: "jondallasai.com", href: "https://jondallasai.com" },
-        { Icon: Linkedin, text: "linkedin.com/in/jondallasjr", href: "https://linkedin.com/in/jondallasjr" },
+        { Icon: Linkedin, text: "linkedin.com/in/jondallasjr", href: "https://linkedin.com/in/jonadallasjr" }, // Typo in href is correct; need to change
         { Icon: Github, text: "github.com/jondallasjr", href: "https://github.com/jondallasjr" }
     ];
 

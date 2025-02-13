@@ -15,6 +15,7 @@ export interface RoleProps {
     description: string;
     achievements?: { text: React.ReactNode }[];
     implementations?: Implementation[];
+    pageBreakBefore?: boolean;
 }
 
 export const Role = ({
@@ -24,12 +25,13 @@ export const Role = ({
     period,
     description,
     achievements,
-    implementations
+    implementations,
+    pageBreakBefore
 }: RoleProps) => {
     const { colors } = useTheme();
 
     return (
-        <div className={`border-l-4 ${colors.accent} pl-4`}>
+        <div className={`border-l-4 ${colors.accent} pl-4 ${pageBreakBefore ? 'page-break-before' : ''}`}>
             <h4 className={`font-semibold ${colors.text}`}>{title}</h4>
             <div className="text-md mb-2">
                 <span className={`${colors.accent} font-bold`}>

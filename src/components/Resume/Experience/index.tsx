@@ -2,6 +2,10 @@ import React from 'react';
 import Role, { RoleProps, Implementation } from './Role';
 import { useTheme } from '../context/ThemeContext';
 
+interface RoleWithBreakProps extends RoleProps {
+    pageBreakBefore?: boolean;
+}
+
 const Experience = () => {
     const { colors } = useTheme();
 
@@ -10,16 +14,16 @@ const Experience = () => {
             title: "Independent AI Consultant & Developer",
             company: "Jon Dallas AI, LLC",
             companyUrl: "https://www.jondallasai.com",
-            period: "2024-Present",
+            period: "2023-Present",
             description: "Independent consultancy delivering custom AI solutions and workshops for SMBs across various sectors",
             implementations: [
                 {
                     company: "Propertybook",
                     companyUrl: "https://www.propertybook.co.zw",
                     details: [
-                        "Engineered agentic AI system to automate the generation of EEAT/SEO-optimized content",
-                        "Integrated property database analysis (7,000+ listings), sentiment analysis, and location-specific research",
-                        "Client produced 450+ SEO-optimized articles in 48 hours",
+                        "Designed an end-to-end AI agent for automated SEO/EEAT-optimized content plan, research, generation, and QA",
+                        "Built with APIs, web scraping, prompt chains, intelligent prompt templating, and RAG to process keyword research, competitive analysis, and internal database (7,000+ listings)",
+                        "Implemented selective writing guidelines to ensure brand consistency"
                     ]
                 },
                 {
@@ -52,6 +56,7 @@ const Experience = () => {
             companyUrl: "https://www.realtalkphilosophy.org",
             period: "2017-Present",
             description: "",
+            pageBreakBefore: true,
             achievements: [
                 { text: "Designed and facilitated 250+ workshops on AI, blockchain, surveillance capitalism, social media, and more" },
                 { text: "Scaled organization from 0 to 12 chapters across the US, Vietnam, Thailand, Singapore, Zimbabwe, & South Africa" },
@@ -66,7 +71,7 @@ const Experience = () => {
             period: "2021-2022",
             description: "",
             achievements: [
-                { text: "Led 6-day virtual Community Sustainability Summit featuring expert panels, interactive workshops, and more"},
+                { text: "Led 6-day virtual Community Sustainability Summit featuring expert panels, interactive workshops, and more" },
                 { text: "Managed 15-person creative team across video production, marketing, and design disciplines" },
                 { text: "Designed comprehensive virtual event structure integrating live discussions, Q&As, and breakout sessions" }
             ]
