@@ -12,8 +12,6 @@ import ThemeTransition from './ThemeTransition';
 import { useTheme } from './context/ThemeContext';
 
 const Resume = () => {
-  const { colors } = useTheme();
-  
   return (
     <ThemeTransition>
       <div className="min-h-screen bg-gray-50">

@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { Mail, Phone, Linkedin, Github, MapPin, Globe } from 'lucide-react';
+import { Mail, Phone, Linkedin, Github, Globe } from 'lucide-react';
 import ContactItem from './ContactItem';
 import { useTheme } from '../context/ThemeContext';
 

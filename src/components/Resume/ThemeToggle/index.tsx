@@ -48,7 +48,7 @@ const ThemeToggle = () => {
           {['modern', 'classic', 'minimal'].map((themeName) => (
             <button
               key={themeName}
-              onClick={() => setTheme(themeName as any)}
+              onClick={() => setTheme(themeName as 'modern' | 'classic' | 'minimal')}
               className="block w-full text-left px-4 py-1 text-sm hover:bg-gray-100 rounded"
             >
               {themeName.charAt(0).toUpperCase() + themeName.slice(1)}

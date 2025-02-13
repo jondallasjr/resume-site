@@ -1,5 +1,5 @@
 import React from 'react';
-import Role, { RoleProps, Implementation } from './Role';
+import Role, { RoleProps } from './Role';
 import { useTheme } from '../context/ThemeContext';
 
 interface RoleWithBreakProps extends RoleProps {
