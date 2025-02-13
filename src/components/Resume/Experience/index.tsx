@@ -2,10 +2,6 @@ import React from 'react';
 import Role, { RoleProps } from './Role';
 import { useTheme } from '../context/ThemeContext';
 
-interface RoleWithBreakProps extends RoleProps {
-    pageBreakBefore?: boolean;
-}
-
 const Experience = () => {
     const { colors } = useTheme();
 
