@@ -56,7 +56,6 @@ const Resume = () => {
       <div className={`${getBackgroundStyles()} ${fonts.body} py-16`}>
         <div className="container mx-auto">
           <div className={`${getContainerStyles()} my-8 print:p-0`} id="resume-container">
-            <ThemeToggle />
             <div id="header-section" className="print:mt-0">
               <Header />
             </div>
