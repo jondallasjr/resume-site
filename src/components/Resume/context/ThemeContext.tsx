@@ -114,8 +114,25 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
         doc.style.background = 'linear-gradient(to bottom, #2E1065, #4C1D95)';
         doc.style.backgroundAttachment = 'fixed';
       } else if (theme === 'glassmorphism') {
-        doc.style.background = 'linear-gradient(to bottom right, #38bdf8, #6366f1)';
+        // Enhanced glassmorphism background with subtle pattern
+        doc.style.background = 'linear-gradient(120deg, #0ea5e9, #4f46e5, #818cf8)';
+        doc.style.backgroundSize = '200% 200%';
+        doc.style.animation = 'gradientAnimation 15s ease infinite';
         doc.style.backgroundAttachment = 'fixed';
+        
+        // Add animation keyframes if they don't exist
+        if (!document.getElementById('gradient-animation-style')) {
+          const styleEl = document.createElement('style');
+          styleEl.id = 'gradient-animation-style';
+          styleEl.innerHTML = `
+            @keyframes gradientAnimation {
+              0% { background-position: 0% 50% }
+              50% { background-position: 100% 50% }
+              100% { background-position: 0% 50% }
+            }
+          `;
+          document.head.appendChild(styleEl);
+        }
       } else if (theme === 'neubrutalism') {
         doc.style.background = '#facc15'; // Yellow-300
         doc.style.backgroundAttachment = 'fixed';

@@ -31,8 +31,8 @@ export const Role = ({
     const { colors, fonts, theme } = useTheme();
 
     return (
-        <div className={`border-l-4 ${colors.accent} pl-4 ${pageBreakBefore ? 'page-break-before' : ''}`}>
-            <h4 className={`${colors.text} ${fonts.heading}`}>{title}</h4>
+        <div className={`border-l-4 ${colors.accent} pl-4 ${pageBreakBefore ? 'page-break-before' : ''} print:border-l-gray-300 print:break-inside-avoid-page print:mb-4`}>
+            <h4 className={`${colors.text} ${fonts.heading} print:text-black print:font-bold print:text-sm`}>{title}</h4>
             <div className="text-md mb-2">
                 <span className={`${colors.accent} font-bold`}>
                     {companyUrl ? (
@@ -50,12 +50,12 @@ export const Role = ({
                 </span>
                 <span className={`${theme === 'memphis' || theme === 'synthwave' || theme === 'glassmorphism' ? 'text-gray-200' : 'text-gray-500'}`}> | {period}</span>
             </div>
-            <p className={`${theme === 'memphis' || theme === 'synthwave' || theme === 'glassmorphism' ? 'text-white' : 'text-gray-600'} mb-2 text-sm pl-0 ${fonts.body}`}>{description}</p>
+            <p className={`${theme === 'memphis' || theme === 'synthwave' || theme === 'glassmorphism' ? 'text-white' : 'text-gray-600'} mb-2 text-sm pl-0 ${fonts.body} print:text-black print:text-xs print:leading-tight print:mb-1`}>{description}</p>
 
             {achievements && (
-                <ul className={`list-disc ${theme === 'memphis' || theme === 'synthwave' || theme === 'glassmorphism' ? 'text-white' : 'text-gray-600'} space-y-1 pl-8 text-sm ${fonts.body}`}>
+                <ul className={`list-disc ${theme === 'memphis' || theme === 'synthwave' || theme === 'glassmorphism' ? 'text-white' : 'text-gray-600'} space-y-1 pl-8 text-sm ${fonts.body} print:space-y-0 print:pl-4 print:text-xs print:text-black`}>
                     {achievements.map((achievement, idx) => (
-                        <li key={idx}>{achievement.text}</li>
+                        <li key={idx} className="print:mb-0.5">{achievement.text}</li>
                     ))}
                 </ul>
             )}
@@ -63,8 +63,8 @@ export const Role = ({
             {implementations && (
                 <div className="space-y-3">
                     {implementations.map((impl, idx) => (
-                        <div key={idx}>
-                            <h5 className={`text-xs font-bold tracking-wider uppercase ${theme === 'memphis' || theme === 'synthwave' || theme === 'glassmorphism' ? 'text-gray-200' : 'text-gray-400'} mb-1`}>
+                        <div key={idx} className="print:break-inside-avoid-page print:mb-3">
+                            <h5 className={`text-xs font-bold tracking-wider uppercase ${theme === 'memphis' || theme === 'synthwave' || theme === 'glassmorphism' ? 'text-gray-200' : 'text-gray-400'} mb-1 print:text-black print:text-xs`}>
                                 {impl.companyUrl ? (
                                     <a
                                         href={impl.companyUrl}
@@ -78,7 +78,7 @@ export const Role = ({
                                     impl.company
                                 )}
                             </h5>
-                            <ul className={`${theme === 'memphis' || theme === 'synthwave' || theme === 'glassmorphism' ? 'text-white' : 'text-gray-600'} space-y-1 pl-8 text-sm ${fonts.body}`}>
+                            <ul className={`${theme === 'memphis' || theme === 'synthwave' || theme === 'glassmorphism' ? 'text-white' : 'text-gray-600'} space-y-1 pl-8 text-sm ${fonts.body} print:space-y-0 print:pl-4 print:text-xs print:text-black`}>
                                 {impl.details.map((detail, detailIdx) => (
                                     <li key={detailIdx} className="relative pl-5">
                                         <span className="absolute left-0">•</span>

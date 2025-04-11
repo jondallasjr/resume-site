@@ -42,11 +42,11 @@ const SkillCard = ({ title, skills, Icon }: SkillCardProps) => {
     };
     
     return (
-      <div className={getCardStyles()}>
-        <Icon className={`w-5 h-5 mt-1 flex-shrink-0 ${colors.accent}`} />
+      <div className={`${getCardStyles()} print:border-none print:shadow-none print:bg-transparent print:p-1`}>
+        <Icon className={`w-5 h-5 mt-1 flex-shrink-0 ${colors.accent} print:text-black print:w-4 print:h-4`} />
         <div>
-          <h4 className={`${colors.text} ${fonts.heading}`}>{title}</h4>
-          <p className={`${getTextStyles()} ${fonts.body}`}>{skills}</p>
+          <h4 className={`${colors.text} ${fonts.heading} print:text-black print:font-bold print:text-xs`}>{title}</h4>
+          <p className={`${getTextStyles()} ${fonts.body} print:text-black print:text-xs print:leading-tight`}>{skills}</p>
         </div>
       </div>
     );

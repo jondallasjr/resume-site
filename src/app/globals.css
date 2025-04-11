@@ -55,6 +55,65 @@ main, div[class*="min-h-screen"] {
   background-attachment: fixed;
 }
 
+/* Additional glassmorphism effects */
+.theme-glassmorphism h1,
+.theme-glassmorphism h2,
+.theme-glassmorphism h3,
+.theme-glassmorphism h4 {
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.05em;
+  color: white !important;
+}
+
+.theme-glassmorphism .card,
+.theme-glassmorphism div[class*="shadow-md"] {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2) !important;
+}
+
+.theme-glassmorphism div[class*="bg-white"] {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+.theme-glassmorphism div[class*="rounded"] {
+  border-radius: 16px !important;
+}
+
+/* Create glass-like shine effects */
+.theme-glassmorphism div[class*="shadow-md"]::before,
+.theme-glassmorphism .card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 30%;
+  border-radius: 16px 16px 100px 100px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+  pointer-events: none;
+}
+
+/* Add glow to elements */
+.theme-glassmorphism button,
+.theme-glassmorphism a {
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.theme-glassmorphism button:hover,
+.theme-glassmorphism a:hover {
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+  transform: translateY(-2px);
+}
+
+.theme-glassmorphism h1 {
+  font-weight: 600 !important;
+}
+
 .theme-neubrutalism {
   background-color: #facc15;
   background-attachment: fixed;
@@ -131,30 +190,198 @@ main, div[class*="min-h-screen"] {
 }
 
 @media print {
-  /* Set background color for entire page */
+  /* Print layout setup with precise measurements */
   @page {
-    margin: 0;
-    size: auto;
-    background-color: #fafafa;
+    margin: 0.4in;
+    size: letter portrait;
+    background-color: #ffffff;
+  }
+  
+  /* Specific page settings for different sections */
+  @page :first {
+    margin-top: 0.3in;
   }
 
-  body {
-    background-color: #fafafa !important;
-    min-height: 100vh;
-    padding: 2rem;
+  /* Base document style */
+  html, body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    font-size: 11pt !important;
+    line-height: 1.3 !important;
+    font-family: 'Arial', sans-serif !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    height: auto !important;
   }
 
-  /* Add margin to the top of pages after a page break */
+  /* Container formatting */
+  main, .container, div[class*="container"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    background-color: #ffffff !important;
+    box-shadow: none !important;
+  }
+
+  /* Resume container - ensure precise width */
+  div[class*="max-w-4xl"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0.5rem !important;
+    background-color: #ffffff !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+  }
+
+  /* Optimize text and headings for print */
+  h1 {
+    font-size: 18pt !important;
+    margin-top: 0 !important;
+    margin-bottom: 0.3in !important;
+    color: #000000 !important;
+    background: none !important;
+    -webkit-text-fill-color: #000000 !important;
+    text-shadow: none !important;
+    font-weight: bold !important;
+  }
+
+  h2, h3 {
+    font-size: 14pt !important;
+    margin-top: 0.2in !important;
+    margin-bottom: 0.1in !important;
+    page-break-after: avoid !important;
+    color: #000000 !important;
+    background: none !important;
+  }
+
+  p, li, td, div {
+    font-size: 11pt !important;
+    line-height: 1.3 !important;
+    color: #000000 !important;
+  }
+
+  /* Ensure sections have proper spacing */
+  section, div[class*="mb-6"] {
+    margin-bottom: 0.2in !important;
+    page-break-inside: auto !important;
+  }
+
+  /* Allow major sections to break across pages */
+  div[id*="experience"], 
+  div[id*="education"], 
+  div[id*="skills"],
+  div[id*="testimonial"] {
+    page-break-before: auto !important;
+    break-inside: auto !important;
+  }
+
+  /* Prevent orphaned headings at bottom of pages */
+  h2::after, h3::after {
+    content: "";
+    display: block;
+    height: 0.1in;
+  }
+
+  /* Remove decorative elements and backgrounds */
+  div[class*="rounded"], 
+  div[class*="shadow"], 
+  div[class*="border"] {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: #ffffff !important;
+  }
+
+  /* Clean up dividers for print */
+  hr, div[class*="divider"] {
+    border-top: 1px solid #cccccc !important;
+    margin: 0.15in 0 !important;
+  }
+
+  /* Handle links in print */
+  a, a:visited {
+    text-decoration: none !important;
+    color: #000000 !important;
+  }
+
+  /* Clean contact information format */
+  div[class*="flex flex-wrap justify-center"] {
+    display: flex !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 0.2in !important;
+    margin-bottom: 0.2in !important;
+  }
+
+  /* Format specific resume components - skills cards */
+  div[class*="grid grid-cols"] {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0.15in !important;
+  }
+
+  /* Hide non-printable elements */
+  button, 
+  div[role="button"],
+  [class*="theme-toggle"],
+  [aria-label*="theme"],
+  video, audio {
+    display: none !important;
+  }
+
+  /* Ensure backgrounds and gradients print properly */
+  div[class*="bg-gradient"],
+  [style*="background-image"],
+  [class*="from-"],
+  [class*="to-"],
+  [class*="via-"] {
+    background: none !important;
+    background-image: none !important;
+    background-color: transparent !important;
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
+    background-clip: unset !important;
+  }
+  
+  /* Text with background clip (gradient text) */
+  [class*="bg-clip-text"],
+  [class*="text-transparent"] {
+    background-clip: unset !important;
+    -webkit-background-clip: unset !important;
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
+    text-fill-color: #000000 !important;
+  }
+  
+  /* Hide header and footer from browser */
+  @page {
+    margin-top: 0.4in;
+    margin-bottom: 0.4in;
+    margin-left: 0.4in;
+    margin-right: 0.4in;
+  }
+
+  /* Optimize images for print */
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* Add page breaks where necessary */
   .page-break-before {
-    page-break-before: always;
-    margin-top: 3rem !important;
-    padding-top: 1rem !important;
+    page-break-before: always !important;
+    break-before: page !important;
+    margin-top: 0.25in !important;
   }
 
-  /* Ensure background color extends to bottom */
-  #__next, 
-  main {
-    background-color: #fafafa !important;
-    min-height: 100vh;
+  /* Format paragraphs for print */
+  p {
+    orphans: 3 !important; /* Minimum lines at bottom of page */
+    widows: 3 !important;  /* Minimum lines at top of page */
   }
 }

@@ -41,8 +41,8 @@ const Header = () => {
     };
 
     return (
-        <div className="text-center mb-6 px-4">
-            <h1 className={`text-3xl mb-3 bg-gradient-to-r ${colors.primary} text-transparent bg-clip-text ${fonts.heading}`}>
+        <div className="text-center mb-6 px-4 print:mb-3 print:px-0">
+            <h1 className={`text-3xl mb-3 bg-gradient-to-r ${colors.primary} text-transparent bg-clip-text ${fonts.heading} print:text-black print:text-2xl print:mb-2 print:bg-none print:font-bold`}>
                 JON DALLAS JR
             </h1>
             <div className="flex flex-col gap-2">
