@@ -14,14 +14,14 @@ const ContactItem = ({ Icon, text, href }: ContactItemProps) => {
     const { colors } = useTheme();
     
     const content = (
-      <div className="flex items-center gap-1">
+      <div className="flex items-center gap-1 py-1 px-2">
         <Icon className={colors.secondary} size={14} />
         <span className="text-sm">{text}</span>
       </div>
     );
   
     return href ? (
-      <a href={href} className="hover:text-blue-600">
+      <a href={href} className="hover:text-blue-600 rounded hover:bg-gray-100 transition-colors">
         {content}
       </a>
     ) : content;
