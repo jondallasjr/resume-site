@@ -3,7 +3,6 @@
 import React from 'react';
 import { LucideIcon } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
-import type { ThemeType } from '../context/ThemeContext';
 
 interface ContactItemProps {
   Icon: LucideIcon;

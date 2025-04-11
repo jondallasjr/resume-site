@@ -7,12 +7,11 @@ import Skills from './Skills';
 import Experience from './Experience';
 import Education from './Education';
 import Testimonial from './Testimonial';
-import ThemeToggle from './ThemeToggle';
 import ThemeTransition from './ThemeTransition';
 import { useTheme } from './context/ThemeContext';
 
 const Resume = () => {
-  const { theme, colors, fonts } = useTheme();
+  const { theme, fonts } = useTheme();
   
   // Get container styles based on theme
   const getContainerStyles = () => {

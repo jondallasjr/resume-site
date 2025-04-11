@@ -8,15 +8,11 @@ import type { ThemeType } from '../context/ThemeContext';
 const ThemeToggle = () => {
   const { theme, setTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
-  const [showSettings, setShowSettings] = useState(false);
 
   // Ref for timeout
   const closeTimeoutRef = React.useRef<number | null>(null);
   
   useEffect(() => {
-    // Always show the settings button
-    setShowSettings(true);
-    
     // Clean up timeout on unmount
     return () => {
       if (closeTimeoutRef.current) {
@@ -46,8 +42,7 @@ const ThemeToggle = () => {
     }
   };
 
-  // Always show the button
-  const shouldShow = true;
+  // Always show the button - this is now the default behavior
   
   // Get theme icon based on current theme
   const getThemeIcon = () => {

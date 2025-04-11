@@ -4,7 +4,6 @@ import React from 'react';
 import { Mail, Phone, Linkedin, Github, Globe } from 'lucide-react';
 import ContactItem from './ContactItem';
 import { useTheme } from '../context/ThemeContext';
-import type { ThemeType } from '../context/ThemeContext';
 
 const Header = () => {
     const { colors, fonts, theme } = useTheme();
