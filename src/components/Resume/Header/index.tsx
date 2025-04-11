@@ -4,9 +4,10 @@ import React from 'react';
 import { Mail, Phone, Linkedin, Github, Globe } from 'lucide-react';
 import ContactItem from './ContactItem';
 import { useTheme } from '../context/ThemeContext';
+import type { ThemeType } from '../context/ThemeContext';
 
 const Header = () => {
-    const { colors } = useTheme();
+    const { colors, fonts, theme } = useTheme();
 
     const topLineInfo = [
         { Icon: Mail, text: "jondallasjr@gmail.com", href: "mailto:jondallasjr@gmail.com" },
@@ -18,25 +19,45 @@ const Header = () => {
         { Icon: Linkedin, text: "linkedin.com/in/jondallasjr", href: "https://linkedin.com/in/jondallasjr" },
         { Icon: Github, text: "github.com/jondallasjr", href: "https://github.com/jondallasjr" }
     ];
+    
+    const getTextColor = () => {
+      if (theme === 'memphis' || theme === 'synthwave' || theme === 'glassmorphism') {
+        return 'text-white';
+      }
+      return 'text-gray-600';
+    };
+    
+    const getDividerColor = () => {
+      switch(theme) {
+        case 'memphis':
+          return 'text-yellow-300';
+        case 'synthwave':
+          return 'text-cyan-400';
+        case 'glassmorphism':
+          return 'text-white';
+        default:
+          return 'text-gray-300';
+      }
+    };
 
     return (
         <div className="text-center mb-6 px-4">
-            <h1 className={`text-3xl font-bold mb-3 bg-gradient-to-r ${colors.primary} text-transparent bg-clip-text`}>
+            <h1 className={`text-3xl mb-3 bg-gradient-to-r ${colors.primary} text-transparent bg-clip-text ${fonts.heading}`}>
                 JON DALLAS JR
             </h1>
             <div className="flex flex-col gap-2">
-                <div className="flex flex-wrap justify-center items-center gap-4 text-gray-600">
+                <div className={`flex flex-wrap justify-center items-center gap-4 ${getTextColor()}`}>
                     {topLineInfo.map((item, index) => (
                         <React.Fragment key={item.text}>
-                            {index > 0 && <span className="text-gray-300 hidden sm:inline">|</span>}
+                            {index > 0 && <span className={`hidden sm:inline ${getDividerColor()}`}>|</span>}
                             <ContactItem {...item} />
                         </React.Fragment>
                     ))}
                 </div>
-                <div className="flex flex-wrap justify-center items-center gap-4 text-gray-600">
+                <div className={`flex flex-wrap justify-center items-center gap-4 ${getTextColor()}`}>
                     {bottomLineInfo.map((item, index) => (
                         <React.Fragment key={item.text}>
-                            {index > 0 && <span className="text-gray-300 hidden sm:inline">|</span>}
+                            {index > 0 && <span className={`hidden sm:inline ${getDividerColor()}`}>|</span>}
                             <ContactItem {...item} />
                         </React.Fragment>
                     ))}

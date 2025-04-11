@@ -16,7 +16,7 @@ interface EducationItem {
 }
 
 const Education = () => {
-  const { colors } = useTheme();
+  const { colors, fonts, theme } = useTheme();
   
   const education: EducationItem = {
     degree: "Bachelor of Science",
@@ -56,32 +56,32 @@ const Education = () => {
     <div className="mb-8">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
-          <h3 className={`text-xl font-semibold mb-4 ${colors.text}`}>
+          <h3 className={`text-xl mb-4 ${colors.text} ${fonts.heading}`}>
             EDUCATION
           </h3>
-          <div className="text-gray-600">
+          <div className={`${theme === 'memphis' || theme === 'synthwave' || theme === 'glassmorphism' ? 'text-white' : 'text-gray-600'} ${fonts.body}`}>
             <div className={`font-medium ${colors.accent}`}>
               {education.degree}
             </div>
             <div>
               {renderLink(education.school, education.url)}
             </div>
-            <div className="text-sm mt-2">{education.major}</div>
+            <div className={`text-sm mt-2 ${theme === 'memphis' || theme === 'synthwave' || theme === 'glassmorphism' ? 'text-gray-200' : 'text-gray-600'}`}>{education.major}</div>
           </div>
         </div>
         
         <div>
-          <h3 className={`text-xl font-semibold mb-4 ${colors.text}`}>
+          <h3 className={`text-xl mb-4 ${colors.text} ${fonts.heading}`}>
             OTHER
           </h3>
-          <ul className="space-y-3 text-gray-600">
+          <ul className={`space-y-3 ${theme === 'memphis' || theme === 'synthwave' || theme === 'glassmorphism' ? 'text-white' : 'text-gray-600'} ${fonts.body}`}>
             {otherExperience.map((exp, idx) => (
               <li key={idx}>
                 <div className={`font-medium ${colors.accent}`}>
                   {renderLink(exp.title, exp.url)}
                 </div>
                 {exp.subtitle && <div>{exp.subtitle}</div>}
-                {exp.description && <div className="text-sm">{exp.description}</div>}
+                {exp.description && <div className={`text-sm ${theme === 'memphis' || theme === 'synthwave' || theme === 'glassmorphism' ? 'text-gray-200' : 'text-gray-600'}`}>{exp.description}</div>}
               </li>
             ))}
           </ul>

@@ -28,11 +28,11 @@ export const Role = ({
     implementations,
     pageBreakBefore
 }: RoleProps) => {
-    const { colors } = useTheme();
+    const { colors, fonts, theme } = useTheme();
 
     return (
         <div className={`border-l-4 ${colors.accent} pl-4 ${pageBreakBefore ? 'page-break-before' : ''}`}>
-            <h4 className={`font-semibold ${colors.text}`}>{title}</h4>
+            <h4 className={`${colors.text} ${fonts.heading}`}>{title}</h4>
             <div className="text-md mb-2">
                 <span className={`${colors.accent} font-bold`}>
                     {companyUrl ? (
@@ -48,12 +48,12 @@ export const Role = ({
                         company
                     )}
                 </span>
-                <span className="text-gray-500"> | {period}</span>
+                <span className={`${theme === 'memphis' || theme === 'synthwave' || theme === 'glassmorphism' ? 'text-gray-200' : 'text-gray-500'}`}> | {period}</span>
             </div>
-            <p className="text-gray-600 mb-2 text-sm pl-0">{description}</p>
+            <p className={`${theme === 'memphis' || theme === 'synthwave' || theme === 'glassmorphism' ? 'text-white' : 'text-gray-600'} mb-2 text-sm pl-0 ${fonts.body}`}>{description}</p>
 
             {achievements && (
-                <ul className="list-disc text-gray-600 space-y-1 pl-8 text-sm">
+                <ul className={`list-disc ${theme === 'memphis' || theme === 'synthwave' || theme === 'glassmorphism' ? 'text-white' : 'text-gray-600'} space-y-1 pl-8 text-sm ${fonts.body}`}>
                     {achievements.map((achievement, idx) => (
                         <li key={idx}>{achievement.text}</li>
                     ))}
@@ -64,7 +64,7 @@ export const Role = ({
                 <div className="space-y-3">
                     {implementations.map((impl, idx) => (
                         <div key={idx}>
-                            <h5 className="text-xs font-bold tracking-wider uppercase text-gray-400 mb-1">
+                            <h5 className={`text-xs font-bold tracking-wider uppercase ${theme === 'memphis' || theme === 'synthwave' || theme === 'glassmorphism' ? 'text-gray-200' : 'text-gray-400'} mb-1`}>
                                 {impl.companyUrl ? (
                                     <a
                                         href={impl.companyUrl}
@@ -78,7 +78,7 @@ export const Role = ({
                                     impl.company
                                 )}
                             </h5>
-                            <ul className="text-gray-600 space-y-1 pl-8 text-sm">
+                            <ul className={`${theme === 'memphis' || theme === 'synthwave' || theme === 'glassmorphism' ? 'text-white' : 'text-gray-600'} space-y-1 pl-8 text-sm ${fonts.body}`}>
                                 {impl.details.map((detail, detailIdx) => (
                                     <li key={detailIdx} className="relative pl-5">
                                         <span className="absolute left-0">•</span>
