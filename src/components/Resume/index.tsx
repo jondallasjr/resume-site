@@ -64,7 +64,7 @@ const Resume = () => {
             <div id="skills-section" className="print:mt-4">
               <Skills />
             </div>
-            <div id="experience-section" className="print:mt-4">
+            <div id="experience-section" className="print:mt-4 print:break-inside-avoid print:page-break-inside-avoid">
               <Experience />
             </div>
             <div id="education-section" className="print:mt-4">

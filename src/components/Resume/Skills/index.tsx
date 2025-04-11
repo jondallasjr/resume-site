@@ -50,7 +50,7 @@ const Skills = () => {
       case 'synthwave':
         return "mb-6 bg-gray-900 bg-opacity-70 border border-purple-400 rounded-lg overflow-hidden shadow-[0_0_15px_rgba(139,92,246,0.5)]";
       case 'glass':
-        return "mb-6 bg-white bg-opacity-10 backdrop-blur-lg rounded-2xl border border-white border-opacity-20";
+        return "mb-6 bg-black bg-opacity-40 backdrop-blur-lg rounded-2xl border border-white border-opacity-20";
       default:
         return "mb-6";
     }
@@ -66,7 +66,7 @@ const Skills = () => {
       case 'synthwave':
         return `text-xl mb-6 text-cyan-300 px-2 py-1 border-b-2 border-cyan-400 inline-block ${fonts.heading}`;
       case 'glass':
-        return `text-xl mb-6 ${colors.text} px-2 py-1 border-b border-white border-opacity-30 inline-block ${fonts.heading}`;
+        return `text-xl mb-6 text-white px-2 py-1 border-b border-white border-opacity-30 inline-block ${fonts.heading}`;
       default:
         return `text-xl mb-4 ${colors.text} ${fonts.heading}`;
     }
@@ -74,11 +74,11 @@ const Skills = () => {
   
   return (
     <Card className={`${getCardStyles()} print:bg-transparent print:border-none print:shadow-none`}>
-      <CardContent className="pt-6 space-y-6 print:p-0 print:space-y-2">
-        <h3 className={`${getHeaderStyles()} print:text-black print:border-none print:p-0 print:mb-2 print:text-base print:font-bold`}>
+      <CardContent className="pt-6 space-y-6 print:p-0 print:space-y-1">
+        <h3 className={`${getHeaderStyles()} print:text-black print:border-none print:p-0 print:mb-1 print:text-sm print:font-bold`}>
           SKILLS & EXPERTISE
         </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 print:gap-2 print:grid-cols-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 print:gap-1 print:grid-cols-3">
           {skillsData.map((skill, idx) => (
             <SkillCard key={idx} {...skill} />
           ))}

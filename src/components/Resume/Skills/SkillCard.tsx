@@ -21,7 +21,7 @@ const SkillCard = ({ title, skills, Icon }: SkillCardProps) => {
         case 'synthwave':
           return "flex items-start gap-2 p-3 bg-purple-900 bg-opacity-60 rounded-lg border border-cyan-400 shadow-[0_0_8px_rgba(45,212,191,0.5)]";
         case 'glass':
-          return "flex items-start gap-2 p-3 bg-white bg-opacity-20 backdrop-blur-sm rounded-lg border border-white border-opacity-20";
+          return "flex items-start gap-2 p-3 bg-black bg-opacity-40 backdrop-blur-sm rounded-lg border border-white border-opacity-20";
         default:
           return "flex items-start gap-2";
       }
@@ -42,11 +42,11 @@ const SkillCard = ({ title, skills, Icon }: SkillCardProps) => {
     };
     
     return (
-      <div className={`${getCardStyles()} print:border-none print:shadow-none print:bg-transparent print:p-1`}>
-        <Icon className={`w-5 h-5 mt-1 flex-shrink-0 ${colors.accent} print:text-black print:w-4 print:h-4`} />
+      <div className={`${getCardStyles()} print:border-none print:shadow-none print:bg-transparent print:p-1 print:py-0.5`}>
+        <Icon className={`w-5 h-5 mt-1 flex-shrink-0 ${colors.accent} print:text-black print:w-3 print:h-3`} />
         <div>
-          <h4 className={`${colors.text} ${fonts.heading} print:text-black print:font-bold print:text-xs`}>{title}</h4>
-          <p className={`${getTextStyles()} ${fonts.body} print:text-black print:text-xs print:leading-tight`}>{skills}</p>
+          <h4 className={`${colors.text} ${fonts.heading} print:text-black print:font-bold print:text-[9pt] print:mb-0 print:mt-0`}>{title}</h4>
+          <p className={`${getTextStyles()} ${fonts.body} print:text-black print:text-[8pt] print:leading-tight`}>{skills}</p>
         </div>
       </div>
     );

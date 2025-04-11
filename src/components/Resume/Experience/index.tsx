@@ -75,11 +75,11 @@ const Experience = () => {
     ];
 
     return (
-        <div className="mb-6 print:mb-4">
-            <h3 className={`text-xl mb-4 ${theme === 'crownroyal' || theme === 'synthwave' || theme === 'glass' ? 'text-white' : `text-${colors.text}`} ${fonts.heading} print:text-black print:mb-2`}>
+        <div className="mb-6 print:mb-2">
+            <h3 className={`text-xl mb-4 ${theme === 'crownroyal' || theme === 'synthwave' || theme === 'glass' ? 'text-white' : `text-${colors.text}`} ${fonts.heading} print:text-black print:mb-1 print:page-break-after-avoid print:break-after-avoid`}>
                 PROFESSIONAL EXPERIENCE
             </h3>
-            <div className="space-y-6 print:space-y-4">
+            <div className="space-y-6 print:space-y-2 print:page-break-before-avoid print:break-before-avoid print:page-break-inside-avoid print:break-inside-avoid">
                 {roles.map((role, idx) => (
                     <Role key={idx} {...role} />
                 ))}

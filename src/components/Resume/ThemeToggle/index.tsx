@@ -1,7 +1,7 @@
 "use client"; 
 
 import React, { useState, useEffect } from 'react';
-import { KeyboardMusic, TableColumnsSplit, Shapes, BriefcaseBusiness, SquareDashed } from 'lucide-react';
+import { KeyboardMusic, TableColumnsSplit, BriefcaseBusiness, SquareDashed, Crown } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 import type { ThemeType } from '../context/ThemeContext';
 
@@ -48,7 +48,7 @@ const ThemeToggle = () => {
   const getThemeIcon = () => {
     switch(theme) {
       case 'crownroyal':
-        return <Shapes className="w-5 h-5 text-pink-500" />;
+        return <Crown className="w-5 h-5 text-pink-500" />;
       case 'brutal':
         return <TableColumnsSplit className="w-5 h-5 text-black" />;
       case 'synthwave':
@@ -162,7 +162,7 @@ const ThemeToggle = () => {
           <h4 className={getHeaderStyles()}>Select Theme</h4>
           {[
             { name: 'modern', icon: <BriefcaseBusiness className="w-4 h-4" />, label: 'Modern' },
-            { name: 'crownroyal', icon: <Shapes className="w-4 h-4" />, label: 'Crown Royal' },
+            { name: 'crownroyal', icon: <Crown className="w-4 h-4" />, label: 'Crown Royal' },
             { name: 'brutal', icon: <TableColumnsSplit className="w-4 h-4" />, label: 'Brutal' },
             { name: 'synthwave', icon: <KeyboardMusic className="w-4 h-4" />, label: 'Synthwave' },
             { name: 'glass', icon: <SquareDashed className="w-4 h-4" />, label: 'Glass' }
