@@ -22,17 +22,17 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// Memphis theme
-const memphisFont = Rubik_Bubbles({
+// crownroyal theme
+const crownroyalFont = Rubik_Bubbles({
   weight: "400",
-  variable: "--font-memphis",
+  variable: "--font-crownroyal",
   subsets: ["latin"],
 });
 
-// Neubrutalism theme
+// brutal theme
 const neubrutFont = Rubik_Doodle_Shadow({
   weight: "400",
-  variable: "--font-neubrutalism",
+  variable: "--font-brutal",
   subsets: ["latin"],
 });
 
@@ -78,6 +78,11 @@ export const metadata: Metadata = {
   creator: "Jon Dallas",
   viewport: "width=device-width, initial-scale=1",
   robots: "index, follow",
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/favicon.ico',
+    shortcut: '/favicon.ico'
+  },
   openGraph: {
     type: "website",
     title: "Jon Dallas | AI Engineer & Workshop Facilitator",
@@ -103,7 +108,7 @@ export default function RootLayout({
         className={`
           ${geistSans.variable} 
           ${geistMono.variable} 
-          ${memphisFont.variable}
+          ${crownroyalFont.variable}
           ${neubrutFont.variable}
           ${synthwaveFont.variable}
           ${classicFont.variable}

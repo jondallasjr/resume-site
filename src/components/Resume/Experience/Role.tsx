@@ -48,12 +48,12 @@ export const Role = ({
                         company
                     )}
                 </span>
-                <span className={`${theme === 'memphis' || theme === 'synthwave' || theme === 'glassmorphism' ? 'text-gray-200' : 'text-gray-500'}`}> | {period}</span>
+                <span className={`${theme === 'crownroyal' || theme === 'synthwave' || theme === 'glass' ? 'text-gray-200' : 'text-gray-500'}`}> | {period}</span>
             </div>
-            <p className={`${theme === 'memphis' || theme === 'synthwave' || theme === 'glassmorphism' ? 'text-white' : 'text-gray-600'} mb-2 text-sm pl-0 ${fonts.body} print:text-black print:text-xs print:leading-tight print:mb-1`}>{description}</p>
+            <p className={`${theme === 'crownroyal' || theme === 'synthwave' || theme === 'glass' ? 'text-white' : 'text-gray-600'} mb-2 text-sm pl-0 ${fonts.body} print:text-black print:text-xs print:leading-tight print:mb-1`}>{description}</p>
 
             {achievements && (
-                <ul className={`list-disc ${theme === 'memphis' || theme === 'synthwave' || theme === 'glassmorphism' ? 'text-white' : 'text-gray-600'} space-y-1 pl-8 text-sm ${fonts.body} print:space-y-0 print:pl-4 print:text-xs print:text-black`}>
+                <ul className={`list-disc ${theme === 'crownroyal' || theme === 'synthwave' || theme === 'glass' ? 'text-white' : 'text-gray-600'} space-y-1 pl-8 text-sm ${fonts.body} print:space-y-0 print:pl-4 print:text-xs print:text-black`}>
                     {achievements.map((achievement, idx) => (
                         <li key={idx} className="print:mb-0.5">{achievement.text}</li>
                     ))}
@@ -64,7 +64,7 @@ export const Role = ({
                 <div className="space-y-3">
                     {implementations.map((impl, idx) => (
                         <div key={idx} className="print:break-inside-avoid-page print:mb-3">
-                            <h5 className={`text-xs font-bold tracking-wider uppercase ${theme === 'memphis' || theme === 'synthwave' || theme === 'glassmorphism' ? 'text-gray-200' : 'text-gray-400'} mb-1 print:text-black print:text-xs`}>
+                            <h5 className={`text-xs font-bold tracking-wider uppercase ${theme === 'crownroyal' || theme === 'synthwave' || theme === 'glass' ? 'text-gray-200' : 'text-gray-400'} mb-1 print:text-black print:text-xs`}>
                                 {impl.companyUrl ? (
                                     <a
                                         href={impl.companyUrl}
@@ -78,7 +78,7 @@ export const Role = ({
                                     impl.company
                                 )}
                             </h5>
-                            <ul className={`${theme === 'memphis' || theme === 'synthwave' || theme === 'glassmorphism' ? 'text-white' : 'text-gray-600'} space-y-1 pl-8 text-sm ${fonts.body} print:space-y-0 print:pl-4 print:text-xs print:text-black`}>
+                            <ul className={`${theme === 'crownroyal' || theme === 'synthwave' || theme === 'glass' ? 'text-white' : 'text-gray-600'} space-y-1 pl-8 text-sm ${fonts.body} print:space-y-0 print:pl-4 print:text-xs print:text-black`}>
                                 {impl.details.map((detail, detailIdx) => (
                                     <li key={detailIdx} className="relative pl-5">
                                         <span className="absolute left-0">•</span>

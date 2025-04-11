@@ -76,7 +76,7 @@ const Experience = () => {
 
     return (
         <div className="mb-6 print:mb-4">
-            <h3 className={`text-xl mb-4 ${theme === 'memphis' || theme === 'synthwave' || theme === 'glassmorphism' ? 'text-white' : `text-${colors.text}`} ${fonts.heading} print:text-black print:mb-2`}>
+            <h3 className={`text-xl mb-4 ${theme === 'crownroyal' || theme === 'synthwave' || theme === 'glass' ? 'text-white' : `text-${colors.text}`} ${fonts.heading} print:text-black print:mb-2`}>
                 PROFESSIONAL EXPERIENCE
             </h3>
             <div className="space-y-6 print:space-y-4">

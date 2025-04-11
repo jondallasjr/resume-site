@@ -47,13 +47,13 @@ const ThemeToggle = () => {
   // Get theme icon based on current theme
   const getThemeIcon = () => {
     switch(theme) {
-      case 'memphis':
+      case 'crownroyal':
         return <Shapes className="w-5 h-5 text-pink-500" />;
-      case 'neubrutalism':
+      case 'brutal':
         return <TableColumnsSplit className="w-5 h-5 text-black" />;
       case 'synthwave':
         return <KeyboardMusic className="w-5 h-5 text-pink-400" />;
-      case 'glassmorphism':
+      case 'glass':
         return <SquareDashed className="w-5 h-5 text-white" />;
       default:
         return <BriefcaseBusiness className="w-5 h-5 text-gray-600" />;
@@ -63,13 +63,13 @@ const ThemeToggle = () => {
   // Get button styles based on theme
   const getButtonStyles = () => {
     switch(theme) {
-      case 'memphis':
+      case 'crownroyal':
         return "flex items-center gap-1 px-3 py-2 rounded-lg bg-gradient-to-r from-yellow-300 to-pink-300 shadow-lg hover:shadow-xl transition-all duration-300 hover:rotate-3 hover:scale-110 border-2 border-purple-600";
-      case 'neubrutalism':
+      case 'brutal':
         return "flex items-center gap-1 px-3 py-2 bg-yellow-300 border-black border-2 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-200";
       case 'synthwave':
         return "flex items-center gap-1 px-3 py-2 rounded-md bg-purple-800 shadow-[0_0_10px_rgba(236,72,153,0.7)] hover:shadow-[0_0_20px_rgba(236,72,153,1)] transition-all duration-300 hover:scale-110 border border-cyan-400";
-      case 'glassmorphism':
+      case 'glass':
         return "flex items-center gap-1 px-3 py-2 rounded-md bg-white bg-opacity-20 backdrop-blur-lg border border-white border-opacity-30 shadow-md hover:bg-opacity-30 hover:shadow-lg transition-all duration-300 hover:scale-110";
       default:
         return "flex items-center gap-1 px-3 py-2 rounded-md bg-white shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105";
@@ -79,13 +79,13 @@ const ThemeToggle = () => {
   // Get dropdown styles based on theme
   const getDropdownStyles = () => {
     switch(theme) {
-      case 'memphis':
+      case 'crownroyal':
         return "absolute right-0 mt-2 w-56 bg-white rounded-lg shadow-lg p-4 max-h-[80vh] overflow-y-auto border-l-4 border-pink-500 z-50";
-      case 'neubrutalism':
+      case 'brutal':
         return "absolute right-0 mt-2 w-56 bg-white border-black border-[3px] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-4 max-h-[80vh] overflow-y-auto z-50";
       case 'synthwave':
         return "absolute right-0 mt-2 w-56 bg-purple-900 rounded-lg shadow-lg border border-cyan-400 p-4 max-h-[80vh] overflow-y-auto z-50";
-      case 'glassmorphism':
+      case 'glass':
         return "absolute right-0 mt-2 w-56 bg-black bg-opacity-70 backdrop-blur-md rounded-lg shadow-lg p-4 max-h-[80vh] overflow-y-auto border border-white border-opacity-20 z-50";
       default:
         return "absolute right-0 mt-2 w-56 bg-white rounded-lg shadow-lg p-4 max-h-[80vh] overflow-y-auto z-50";
@@ -97,7 +97,7 @@ const ThemeToggle = () => {
     switch(theme) {
       case 'synthwave':
         return "text-sm font-medium mb-2 text-cyan-400";
-      case 'glassmorphism':
+      case 'glass':
         return "text-sm font-medium mb-2 text-white";
       default:
         return "text-sm font-medium mb-2 text-gray-900";
@@ -109,11 +109,11 @@ const ThemeToggle = () => {
     const isActive = theme === themeName;
     
     switch(theme) {
-      case 'memphis':
+      case 'crownroyal':
         return `block w-full text-left px-4 py-2 text-sm rounded mb-1 transition-all ${
           isActive ? 'bg-purple-700 text-yellow-300 font-bold' : 'text-purple-900 hover:bg-purple-100'
         }`;
-      case 'neubrutalism':
+      case 'brutal':
         return `block w-full text-left px-4 py-2 text-sm mb-1 transition-all ${
           isActive ? 'bg-yellow-300 text-black font-bold border-black border' : 'text-black hover:bg-yellow-100 border border-transparent'
         }`;
@@ -121,7 +121,7 @@ const ThemeToggle = () => {
         return `block w-full text-left px-4 py-2 text-sm rounded mb-1 transition-colors ${
           isActive ? 'bg-purple-700 text-cyan-300 border border-cyan-400' : 'text-pink-100 hover:bg-purple-800'
         }`;
-      case 'glassmorphism':
+      case 'glass':
         return `block w-full text-left px-4 py-2 text-sm rounded mb-1 backdrop-blur-sm transition-all ${
           isActive ? 'bg-white bg-opacity-20 text-white border border-white border-opacity-30' : 'text-gray-200 hover:bg-white hover:bg-opacity-10'
         }`;
@@ -146,10 +146,10 @@ const ThemeToggle = () => {
       >
         {getThemeIcon()}
         <span className="text-xs font-medium">
-          {theme === 'memphis' && "Memphis"}
-          {theme === 'neubrutalism' && "Brutal"}
+          {theme === 'crownroyal' && "Crown Royal"}
+          {theme === 'brutal' && "Brutal"}
           {theme === 'synthwave' && "Synthwave"}
-          {theme === 'glassmorphism' && "Glass"}
+          {theme === 'glass' && "Glass"}
           {theme === 'modern' && "Modern"}
         </span>
       </button>
@@ -162,10 +162,10 @@ const ThemeToggle = () => {
           <h4 className={getHeaderStyles()}>Select Theme</h4>
           {[
             { name: 'modern', icon: <BriefcaseBusiness className="w-4 h-4" />, label: 'Modern' },
-            { name: 'memphis', icon: <Shapes className="w-4 h-4" />, label: 'Memphis' },
-            { name: 'neubrutalism', icon: <TableColumnsSplit className="w-4 h-4" />, label: 'Neubrutalism' },
+            { name: 'crownroyal', icon: <Shapes className="w-4 h-4" />, label: 'Crown Royal' },
+            { name: 'brutal', icon: <TableColumnsSplit className="w-4 h-4" />, label: 'Brutal' },
             { name: 'synthwave', icon: <KeyboardMusic className="w-4 h-4" />, label: 'Synthwave' },
-            { name: 'glassmorphism', icon: <SquareDashed className="w-4 h-4" />, label: 'Glass' }
+            { name: 'glass', icon: <SquareDashed className="w-4 h-4" />, label: 'Glass' }
           ].map((themeOption) => (
             <button
               key={themeOption.name}

@@ -14,18 +14,18 @@ const ContactItem = ({ Icon, text, href }: ContactItemProps) => {
     const { colors, theme } = useTheme();
     
     const getTextClass = () => {
-      if (theme === 'memphis' || theme === 'synthwave' || theme === 'glassmorphism') {
+      if (theme === 'crownroyal' || theme === 'synthwave' || theme === 'glass') {
         return "text-sm text-white";
       }
       return "text-sm";
     };
     
     const getLinkHoverClass = () => {
-      if (theme === 'memphis') {
+      if (theme === 'crownroyal') {
         return "hover:text-yellow-300 rounded hover:bg-purple-600 transition-colors";
       } else if (theme === 'synthwave') {
         return "hover:text-cyan-300 rounded hover:bg-purple-800 transition-colors";
-      } else if (theme === 'glassmorphism') {
+      } else if (theme === 'glass') {
         return "hover:text-sky-200 rounded hover:bg-white hover:bg-opacity-20 transition-colors";
       }
       return "hover:text-blue-600 rounded hover:bg-gray-100 transition-colors";

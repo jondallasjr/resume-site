@@ -15,12 +15,12 @@ const Header = () => {
 
     const bottomLineInfo = [
         { Icon: Globe, text: "jondallasai.com", href: "https://jondallasai.com" },
-        { Icon: Linkedin, text: "linkedin.com/in/jondallasjr", href: "https://linkedin.com/in/jondallasjr" },
+        { Icon: Linkedin, text: "linkedin.com/in/jondallasjr", href: "https://linkedin.com/in/jonadallasjr" },
         { Icon: Github, text: "github.com/jondallasjr", href: "https://github.com/jondallasjr" }
     ];
     
     const getTextColor = () => {
-      if (theme === 'memphis' || theme === 'synthwave' || theme === 'glassmorphism') {
+      if (theme === 'crownroyal' || theme === 'synthwave' || theme === 'glass') {
         return 'text-white';
       }
       return 'text-gray-600';
@@ -28,11 +28,11 @@ const Header = () => {
     
     const getDividerColor = () => {
       switch(theme) {
-        case 'memphis':
+        case 'crownroyal':
           return 'text-yellow-300';
         case 'synthwave':
           return 'text-cyan-400';
-        case 'glassmorphism':
+        case 'glass':
           return 'text-white';
         default:
           return 'text-gray-300';

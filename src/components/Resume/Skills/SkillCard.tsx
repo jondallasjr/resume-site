@@ -14,13 +14,13 @@ const SkillCard = ({ title, skills, Icon }: SkillCardProps) => {
     // Get card styles based on theme
     const getCardStyles = () => {
       switch(theme) {
-        case 'memphis':
+        case 'crownroyal':
           return "flex items-start gap-2 p-3 bg-purple-700 rounded-lg shadow-md border-l-4 border-yellow-300";
-        case 'neubrutalism':
+        case 'brutal':
           return "flex items-start gap-2 p-3 bg-white border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]";
         case 'synthwave':
           return "flex items-start gap-2 p-3 bg-purple-900 bg-opacity-60 rounded-lg border border-cyan-400 shadow-[0_0_8px_rgba(45,212,191,0.5)]";
-        case 'glassmorphism':
+        case 'glass':
           return "flex items-start gap-2 p-3 bg-white bg-opacity-20 backdrop-blur-sm rounded-lg border border-white border-opacity-20";
         default:
           return "flex items-start gap-2";
@@ -30,11 +30,11 @@ const SkillCard = ({ title, skills, Icon }: SkillCardProps) => {
     // Get text styles based on theme
     const getTextStyles = () => {
       switch(theme) {
-        case 'memphis':
+        case 'crownroyal':
           return "text-white text-sm font-medium";
         case 'synthwave':
           return "text-gray-300 text-sm";
-        case 'glassmorphism':
+        case 'glass':
           return "text-white text-sm";
         default:
           return "text-gray-600 text-sm";

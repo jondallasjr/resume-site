@@ -2,7 +2,7 @@
 
 import React, { createContext, useContext, useState } from 'react';
 
-export type ThemeType = 'modern' | 'memphis' | 'neubrutalism' | 'synthwave' | 'glassmorphism';
+export type ThemeType = 'modern' | 'crownroyal' | 'brutal' | 'synthwave' | 'glass';
 
 interface ThemeContextType {
   theme: ThemeType;
@@ -33,7 +33,7 @@ const themes = {
         body: 'font-sans var(--font-geist-sans)',
       }
     },
-    memphis: {
+    crownroyal: {
       primary: 'bg-gradient-to-r from-yellow-400 to-pink-500',
       secondary: 'text-yellow-300',
       text: 'text-white',
@@ -41,11 +41,11 @@ const themes = {
       accent: 'text-yellow-300',
       border: 'border-yellow-400',
       fonts: {
-        heading: 'font-sans var(--font-memphis)',
+        heading: 'font-sans var(--font-crownroyal)',
         body: 'font-sans var(--font-glass)',
       }
     },
-    neubrutalism: {
+    brutal: {
       primary: 'bg-gradient-to-r from-black to-neutral-800',
       secondary: 'text-black',
       text: 'text-black',
@@ -53,7 +53,7 @@ const themes = {
       accent: 'text-red-500',
       border: 'border-black border-2',
       fonts: {
-        heading: 'font-sans var(--font-neubrutalism)',
+        heading: 'font-sans var(--font-brutal)',
         body: 'font-sans',
       }
     },
@@ -69,7 +69,7 @@ const themes = {
         body: 'font-mono var(--font-synthwave)',
       }
     },
-    glassmorphism: {
+    glass: {
       primary: 'bg-gradient-to-r from-cyan-400 to-sky-300',
       secondary: 'text-white',
       text: 'text-white',
@@ -97,24 +97,24 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
       // First remove any existing theme classes
       doc.classList.remove(
         'theme-modern',
-        'theme-memphis',
-        'theme-neubrutalism',
+        'theme-crownroyal',
+        'theme-brutal',
         'theme-synthwave',
-        'theme-glassmorphism'
+        'theme-glass'
       );
       
       // Add the new theme class
       doc.classList.add(`theme-${theme}`);
       
-      // Set direct background style for Memphis theme
-      if (theme === 'memphis') {
+      // Set direct background style for crownroyal theme
+      if (theme === 'crownroyal') {
         doc.style.background = 'linear-gradient(to bottom right, #7e22ce, #be185d)';
         doc.style.backgroundAttachment = 'fixed';
       } else if (theme === 'synthwave') {
         doc.style.background = 'linear-gradient(to bottom, #2E1065, #4C1D95)';
         doc.style.backgroundAttachment = 'fixed';
-      } else if (theme === 'glassmorphism') {
-        // Enhanced glassmorphism background with subtle pattern
+      } else if (theme === 'glass') {
+        // Enhanced glass background with subtle pattern
         doc.style.background = 'linear-gradient(120deg, #0ea5e9, #4f46e5, #818cf8)';
         doc.style.backgroundSize = '200% 200%';
         doc.style.animation = 'gradientAnimation 15s ease infinite';
@@ -133,7 +133,7 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
           `;
           document.head.appendChild(styleEl);
         }
-      } else if (theme === 'neubrutalism') {
+      } else if (theme === 'brutal') {
         doc.style.background = '#facc15'; // Yellow-300
         doc.style.backgroundAttachment = 'fixed';
       } else {

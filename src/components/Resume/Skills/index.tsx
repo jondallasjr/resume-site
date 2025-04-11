@@ -43,13 +43,13 @@ const Skills = () => {
   // Get card styles based on theme
   const getCardStyles = () => {
     switch(theme) {
-      case 'memphis':
+      case 'crownroyal':
         return "mb-6 bg-purple-800 rounded-lg overflow-hidden border-t-4 border-yellow-300";
-      case 'neubrutalism':
+      case 'brutal':
         return "mb-6 bg-white border-black border-[3px] shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]";
       case 'synthwave':
         return "mb-6 bg-gray-900 bg-opacity-70 border border-purple-400 rounded-lg overflow-hidden shadow-[0_0_15px_rgba(139,92,246,0.5)]";
-      case 'glassmorphism':
+      case 'glass':
         return "mb-6 bg-white bg-opacity-10 backdrop-blur-lg rounded-2xl border border-white border-opacity-20";
       default:
         return "mb-6";
@@ -59,13 +59,13 @@ const Skills = () => {
   // Get header styles based on theme
   const getHeaderStyles = () => {
     switch(theme) {
-      case 'memphis':
+      case 'crownroyal':
         return `text-xl mb-6 text-yellow-300 px-2 py-1 bg-purple-900 border-2 border-yellow-300 inline-block ${fonts.heading}`;
-      case 'neubrutalism':
+      case 'brutal':
         return `text-xl mb-6 ${colors.text} px-2 py-1 bg-red-400 inline-block ${fonts.heading}`;
       case 'synthwave':
         return `text-xl mb-6 text-cyan-300 px-2 py-1 border-b-2 border-cyan-400 inline-block ${fonts.heading}`;
-      case 'glassmorphism':
+      case 'glass':
         return `text-xl mb-6 ${colors.text} px-2 py-1 border-b border-white border-opacity-30 inline-block ${fonts.heading}`;
       default:
         return `text-xl mb-4 ${colors.text} ${fonts.heading}`;

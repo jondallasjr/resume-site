@@ -32,7 +32,7 @@ const Education = () => {
     },
     {
       title: "Coda.io Expert",
-      description: "20+ enterprise systems developed. 15K+ monthly API invocations across 5 custom packs.",
+      description: "Developed 20+ enterprise systems, 5 custom packs with 15K+ API invocations a month",
       url: "https://coda.io/@jon-dallas"
     }
   ];
@@ -59,14 +59,14 @@ const Education = () => {
           <h3 className={`text-xl mb-4 ${colors.text} ${fonts.heading}`}>
             EDUCATION
           </h3>
-          <div className={`${theme === 'memphis' || theme === 'synthwave' || theme === 'glassmorphism' ? 'text-white' : 'text-gray-600'} ${fonts.body}`}>
+          <div className={`${theme === 'crownroyal' || theme === 'synthwave' || theme === 'glass' ? 'text-white' : 'text-gray-600'} ${fonts.body}`}>
             <div className={`font-medium ${colors.accent}`}>
               {education.degree}
             </div>
             <div>
               {renderLink(education.school, education.url)}
             </div>
-            <div className={`text-sm mt-2 ${theme === 'memphis' || theme === 'synthwave' || theme === 'glassmorphism' ? 'text-gray-200' : 'text-gray-600'}`}>{education.major}</div>
+            <div className={`text-sm mt-2 ${theme === 'crownroyal' || theme === 'synthwave' || theme === 'glass' ? 'text-gray-200' : 'text-gray-600'}`}>{education.major}</div>
           </div>
         </div>
         
@@ -74,14 +74,14 @@ const Education = () => {
           <h3 className={`text-xl mb-4 ${colors.text} ${fonts.heading}`}>
             OTHER
           </h3>
-          <ul className={`space-y-3 ${theme === 'memphis' || theme === 'synthwave' || theme === 'glassmorphism' ? 'text-white' : 'text-gray-600'} ${fonts.body}`}>
+          <ul className={`space-y-3 ${theme === 'crownroyal' || theme === 'synthwave' || theme === 'glass' ? 'text-white' : 'text-gray-600'} ${fonts.body}`}>
             {otherExperience.map((exp, idx) => (
               <li key={idx}>
                 <div className={`font-medium ${colors.accent}`}>
                   {renderLink(exp.title, exp.url)}
                 </div>
                 {exp.subtitle && <div>{exp.subtitle}</div>}
-                {exp.description && <div className={`text-sm ${theme === 'memphis' || theme === 'synthwave' || theme === 'glassmorphism' ? 'text-gray-200' : 'text-gray-600'}`}>{exp.description}</div>}
+                {exp.description && <div className={`text-sm ${theme === 'crownroyal' || theme === 'synthwave' || theme === 'glass' ? 'text-gray-200' : 'text-gray-600'}`}>{exp.description}</div>}
               </li>
             ))}
           </ul>

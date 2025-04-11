@@ -38,7 +38,7 @@ main, div[class*="min-h-screen"] {
 }
 
 /* Theme background patterns */
-.theme-memphis {
+.theme-crownroyal {
   background-image: linear-gradient(to bottom right, #7e22ce, #be185d), 
                     url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.08'%3E%3Ccircle cx='25' cy='25' r='8'/%3E%3Ccircle cx='75' cy='75' r='8'/%3E%3Ccircle cx='75' cy='25' r='8'/%3E%3Ccircle cx='25' cy='75' r='8'/%3E%3C/g%3E%3C/svg%3E");
   background-attachment: fixed;
@@ -50,41 +50,41 @@ main, div[class*="min-h-screen"] {
   background-attachment: fixed;
 }
 
-.theme-glassmorphism {
+.theme-glass {
   background-image: linear-gradient(to bottom right, #38bdf8, #6366f1);
   background-attachment: fixed;
 }
 
-/* Additional glassmorphism effects */
-.theme-glassmorphism h1,
-.theme-glassmorphism h2,
-.theme-glassmorphism h3,
-.theme-glassmorphism h4 {
+/* Additional glass effects */
+.theme-glass h1,
+.theme-glass h2,
+.theme-glass h3,
+.theme-glass h4 {
   text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
   letter-spacing: 0.05em;
   color: white !important;
 }
 
-.theme-glassmorphism .card,
-.theme-glassmorphism div[class*="shadow-md"] {
+.theme-glass .card,
+.theme-glass div[class*="shadow-md"] {
   background: rgba(255, 255, 255, 0.1) !important;
   backdrop-filter: blur(12px) !important;
   border: 1px solid rgba(255, 255, 255, 0.2) !important;
   box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2) !important;
 }
 
-.theme-glassmorphism div[class*="bg-white"] {
+.theme-glass div[class*="bg-white"] {
   background: rgba(255, 255, 255, 0.1) !important;
   backdrop-filter: blur(8px) !important;
 }
 
-.theme-glassmorphism div[class*="rounded"] {
+.theme-glass div[class*="rounded"] {
   border-radius: 16px !important;
 }
 
 /* Create glass-like shine effects */
-.theme-glassmorphism div[class*="shadow-md"]::before,
-.theme-glassmorphism .card::before {
+.theme-glass div[class*="shadow-md"]::before,
+.theme-glass .card::before {
   content: '';
   position: absolute;
   top: 0;
@@ -97,24 +97,24 @@ main, div[class*="min-h-screen"] {
 }
 
 /* Add glow to elements */
-.theme-glassmorphism button,
-.theme-glassmorphism a {
+.theme-glass button,
+.theme-glass a {
   position: relative;
   z-index: 1;
   transition: all 0.3s ease;
 }
 
-.theme-glassmorphism button:hover,
-.theme-glassmorphism a:hover {
+.theme-glass button:hover,
+.theme-glass a:hover {
   text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
   transform: translateY(-2px);
 }
 
-.theme-glassmorphism h1 {
+.theme-glass h1 {
   font-weight: 600 !important;
 }
 
-.theme-neubrutalism {
+.theme-brutal {
   background-color: #facc15;
   background-attachment: fixed;
 }
